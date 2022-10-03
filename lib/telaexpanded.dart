@@ -18,12 +18,40 @@ class _MyWidgetState extends State<TelaExpanded> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleTextStyle: const TextStyle(
-          fontSize: 25,
-          color: Color.fromARGB(255, 233, 233, 233),
-        ),
+        leading: TextButton(
+            onPressed: (() => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TelaInicial()),
+                  )
+                }),
+            child: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
+        title: const Text('Aluga Fácil'),
+        // ignore: prefer_const_literals_to_create_immutables
+        actions: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(Icons.search),
+          ),
+          TextButton(
+            onPressed: (() => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TelaInicial()),
+                  )
+                }),
+            child: const Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
+          )
+        ],
         backgroundColor: const Color.fromARGB(255, 17, 41, 50),
-        title: const Text('ALUGUEL DE IMÓVEIS'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -39,156 +67,125 @@ class _MyWidgetState extends State<TelaExpanded> {
           children: <Widget>[
             Expanded(
               child: ListView(
-                padding: const EdgeInsets.all(8),
                 children: [
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.elasviajando.com.br/wp-content/uploads/2021/06/hotel-com-vista-para-o-mar-no-rj-7-845x550.jpg'),
-                    fit: BoxFit.cover,
-                    width: 200,
-                    height: 200,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: const Color.fromARGB(255, 17, 80, 95),
-                    height: 100,
-                    child: TextButton(
-                      child: const Center(
-                        child: Text(
-                          "VER DETALHES",
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TelaInicial()),
-                        )
-                      },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: const Color.fromARGB(255, 17, 80, 95),
+                      elevation: 6,
+                      borderRadius: BorderRadius.circular(28),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: InkWell(
+                          splashColor: Colors.black26,
+                          onTap: () {},
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Ink.image(
+                                image: const AssetImage("casas/Hotel.jpg"),
+                                fit: BoxFit.cover,
+                                height: 150,
+                                width: 400,
+                              ),
+                              const SizedBox(height: 6),
+                              const Text(
+                                'Hotel De Luxo',
+                                style: TextStyle(
+                                    fontSize: 22, color: Colors.white),
+                              ),
+                              const SizedBox(height: 6),
+                            ],
+                          )),
                     ),
                   ),
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.elasviajando.com.br/wp-content/uploads/2021/06/hotel-com-vista-para-o-mar-no-rj-7-845x550.jpg'),
-                    fit: BoxFit.cover,
-                    width: 200,
-                    height: 200,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: const Color.fromARGB(255, 17, 80, 95),
-                    height: 100,
-                    child: TextButton(
-                      child: const Center(
-                        child: Text(
-                          "VER DETALHES",
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TelaInicial()),
-                        )
-                      },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: const Color.fromARGB(255, 17, 80, 95),
+                      elevation: 6,
+                      borderRadius: BorderRadius.circular(28),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: InkWell(
+                          splashColor: Colors.black26,
+                          onTap: () {},
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Ink.image(
+                                image: const AssetImage("casas/Hotel.jpg"),
+                                fit: BoxFit.cover,
+                                height: 150,
+                                width: 400,
+                              ),
+                              const SizedBox(height: 6),
+                              const Text(
+                                'Hotel De Luxo',
+                                style: TextStyle(
+                                    fontSize: 22, color: Colors.white),
+                              ),
+                              const SizedBox(height: 6),
+                            ],
+                          )),
                     ),
                   ),
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.elasviajando.com.br/wp-content/uploads/2021/06/hotel-com-vista-para-o-mar-no-rj-7-845x550.jpg'),
-                    fit: BoxFit.cover,
-                    width: 200,
-                    height: 200,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: const Color.fromARGB(255, 17, 80, 95),
-                    height: 100,
-                    child: TextButton(
-                      child: const Center(
-                        child: Text(
-                          "VER DETALHES",
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TelaInicial()),
-                        )
-                      },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: const Color.fromARGB(255, 17, 80, 95),
+                      elevation: 6,
+                      borderRadius: BorderRadius.circular(28),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: InkWell(
+                          splashColor: Colors.black26,
+                          onTap: () {},
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Ink.image(
+                                image: const AssetImage("casas/Hotel.jpg"),
+                                fit: BoxFit.cover,
+                                height: 150,
+                                width: 400,
+                              ),
+                              const SizedBox(height: 6),
+                              const Text(
+                                'Hotel De Luxo',
+                                style: TextStyle(
+                                    fontSize: 22, color: Colors.white),
+                              ),
+                              const SizedBox(height: 6),
+                            ],
+                          )),
                     ),
                   ),
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.elasviajando.com.br/wp-content/uploads/2021/06/hotel-com-vista-para-o-mar-no-rj-7-845x550.jpg'),
-                    fit: BoxFit.cover,
-                    width: 200,
-                    height: 200,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: const Color.fromARGB(255, 17, 80, 95),
-                    height: 100,
-                    child: TextButton(
-                      child: const Center(
-                        child: Text(
-                          "VER DETALHES",
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TelaInicial()),
-                        )
-                      },
-                    ),
-                  ),
-                  const Image(
-                    image: NetworkImage(
-                        'https://www.elasviajando.com.br/wp-content/uploads/2021/06/hotel-com-vista-para-o-mar-no-rj-7-845x550.jpg'),
-                    fit: BoxFit.cover,
-                    width: 200,
-                    height: 200,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: const Color.fromARGB(255, 17, 80, 95),
-                    height: 100,
-                    child: TextButton(
-                      child: const Center(
-                        child: Text(
-                          "VER DETALHES",
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      onPressed: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const TelaInicial()),
-                        )
-                      },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: const Color.fromARGB(255, 17, 80, 95),
+                      elevation: 6,
+                      borderRadius: BorderRadius.circular(28),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: InkWell(
+                          splashColor: Colors.black26,
+                          onTap: () {},
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Ink.image(
+                                image: const AssetImage("casas/Hotel.jpg"),
+                                fit: BoxFit.cover,
+                                height: 150,
+                                width: 400,
+                              ),
+                              const SizedBox(height: 6),
+                              const Text(
+                                'Hotel De Luxo',
+                                style: TextStyle(
+                                    fontSize: 22, color: Colors.white),
+                              ),
+                              const SizedBox(height: 6),
+                            ],
+                          )),
                     ),
                   ),
                 ],
